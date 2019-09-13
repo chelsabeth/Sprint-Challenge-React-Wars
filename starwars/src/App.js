@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from "axios";
 import CharacterCard from "./components/CharacterCard";
-import { Container, Row } from "reactstrap";
+import { Container, Row} from "reactstrap";
 
 
   // Try to think through what state you'll need for this app before starting. Then build out

@@ -11,7 +11,7 @@ import {
 
 const CharacterCard = props => {
     return (
-      <Col xs="6" sm="4" key={props.key}>
+      <Col xs="6" key={props.key}>
         <Card outline color="warning">
           <CardBody>
             <CardTitle tag="h4">{props.name}</CardTitle>
