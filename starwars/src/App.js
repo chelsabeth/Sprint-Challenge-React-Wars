@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from "axios";
 import CharacterCard from "./components/CharacterCard";
+import { Container, Row } from "reactstrap";
 
 
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -19,8 +20,9 @@ import CharacterCard from "./components/CharacterCard";
       axios
         .get(`https://swapi.co/api/people/`)
         .then(response => {
-          console.log(response.data.results);
-          setData(response.data.results);
+          const data = response.data.results;
+          console.log("character data", data);
+          setData(data);
         })
         .catch(error => {
           console.log("The force is not strong", error);
@@ -34,6 +36,21 @@ import CharacterCard from "./components/CharacterCard";
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <Container>
+        <Row> 
+          {data.map(data => {
+            return (
+              <CharacterCard
+              key={data.id}
+              name={data.name}
+              height={data.height}
+              gender={data.gender}
+              skin={data['skin_color']}
+              />
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 }
