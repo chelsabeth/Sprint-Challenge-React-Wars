@@ -21,11 +21,11 @@ import { Container, Row } from "reactstrap";
         .get(`https://swapi.co/api/people/`)
         .then(response => {
           const data = response.data.results;
-          console.log("character data", data);
+          console.log("Character Data", data);
           setData(data);
         })
         .catch(error => {
-          console.log("The force is not strong", error);
+          console.log("The dark side I sense in you", error);
     });
   }, []);
 
