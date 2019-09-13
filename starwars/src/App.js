@@ -46,6 +46,7 @@ import { Container, Row } from "reactstrap";
               height={data.height}
               gender={data.gender}
               skin={data['skin_color']}
+              eyes={data['eye_color']}
               />
             );
           })}
